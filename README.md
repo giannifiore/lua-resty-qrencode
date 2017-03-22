@@ -1,9 +1,7 @@
 lua-resty-qrencode
 ==========
 
-## lua-resty-qrencode is a wrapper of libqrencode with libpng for OpenResty(nginx_lua).
-
-lua-resty-qrencode is a wrapper of [libqrencode](http://fukuchi.org/works/qrencode/) with libpng for lua.
+lua-resty-qrencode is a wrapper of [libqrencode](http://fukuchi.org/works/qrencode/) with libpng for OpenResty(nginx_lua).
 
 ## Install
 
