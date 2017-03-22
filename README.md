@@ -23,7 +23,7 @@ defalut openresty `PREFIX` is `/usr/local/openresty`, if you have a different pa
 
 ### Other
 
-please install libqrencode and libpng, and read Makefile.
+please install libqrencode and libpng, and read Makefile. or you can see http://blog.csdn.net/orangleliu/article/details/64912578#t0
 
 
 ## Example usage
