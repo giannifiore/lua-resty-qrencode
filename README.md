@@ -13,7 +13,7 @@ before compile it.
 
 ```
 $ brew install libqrencode
-$ https://github.com/orangle/lua-resty-qrencode.git
+$ git clone https://github.com/orangle/lua-resty-qrencode.git
 $ cd lua-resty-qrencode
 $ make
 $ make install
