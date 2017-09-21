@@ -65,3 +65,43 @@ curl 'http://127.0.0.1:8008/qrcode?text=http://orangleliu.info'
 when pass a table, "text" is required and other is optional.
 
 
+### show in browser
+
+```
+location /qrcode {
+        content_by_lua_block {
+            local qr = require("qrencode")
+            local args = ngx.req.get_uri_args()
+            local text = args.text
+
+            if text == nil or text== "" then
+                ngx.say('need a text param')
+                ngx.exit(404)
+            end
+
+            ngx.say(qr {
+                    text=text,
+                    level="L",
+                    kanji=false,
+                    ansi=false,
+                    size=4,
+                    margin=2,
+                    symversion=0,
+                    dpi=78,
+                    casesensitive=true,
+                    foreground="000000",
+                    background="FFFFFF"
+            })
+        }
+
+        default_type image/png;
+        add_header Expires "Fri, 01 Jan 1980 00:00:00 GMT";
+        add_header Pragma "no-cache";
+        add_header Cache-Control "no-cache, max-age=0, must-revalidate";
+    }
+```
+
+
+
+
+
