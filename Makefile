@@ -7,13 +7,15 @@ LUA_VERSION =   5.1
 # See http://lua-users.org/wiki/BuildingModules for platform specific
 # details.
 
-## Linux/BSD
 PREFIX ?=           /usr/local/openresty
-#LDFLAGS +=         -shared
 
+ifeq ($(shell uname), Linux)
+## Linux/BSD
+LDFLAGS +=         -shared
+else
 ## OSX (Macports)
-#PREFIX ?=          /opt/local
 LDFLAGS +=         -bundle -undefined dynamic_lookup
+endif
 
 ## find your luajit path
 LUA_INCLUDE_DIR ?= $(PREFIX)/luajit/include/luajit-2.1
