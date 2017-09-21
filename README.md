@@ -28,6 +28,8 @@ please install libqrencode and libpng, and read Makefile. or you can see http://
 
 ## Example usage
 
+### show in cli
+
 ```lua
     location /qrcode {
         content_by_lua_block {
@@ -100,6 +102,8 @@ location /qrcode {
         add_header Cache-Control "no-cache, max-age=0, must-revalidate";
     }
 ```
+
+type url like 'http://127.0.0.1:8008/qrcode?text=http://orangleliu.info' in browser, you can get a png image.
 
 
 
