@@ -26,7 +26,8 @@ LUA_LIB_DIR ?=     $(PREFIX)/lualib
 
 #CFLAGS ?=          -g -Wall -pedantic -fno-inline
 CFLAGS ?=          -g -O3 -Wall -pedantic
-override CFLAGS += -fpic -I$(LUA_INCLUDE_DIR) -lpng -lqrencode
+override CFLAGS += -fpic -I$(LUA_INCLUDE_DIR)
+LDFLAGS += -lpng -lqrencode
 
 INSTALL ?= install
 
@@ -35,7 +36,7 @@ INSTALL ?= install
 all: qrencode.so
 
 qrencode.so: qrencode.c
-	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 install:
 	$(INSTALL) -d $(LUA_LIB_DIR)
